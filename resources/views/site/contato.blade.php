@@ -1,12 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h3>Contato (view)</h3>
-</body>
-</html>
+@extends('site.layouts.basico')
+@section('titulo',$titulo)
+@section('conteudo')
+<div class="conteudo-pagina">
+    <div class="titulo-pagina">
+        <h1>Entre em contato conosco</h1>
+    </div>
+    <div class="informacao-pagina">
+        <div class="contato-principal">
+            <form method="POST">
+            @csrf
+                <input type="text" name="nome" placeholder="Nome" class="borda-preta">
+                <br>
+                <input type="text" name="telefone" placeholder="Telefone" class="borda-preta">
+                <br>
+                <input type="text" name="email" placeholder="E-mail" class="borda-preta">
+                <br>
+                <select class="borda-preta" name="categoria">
+                    <option value="">Qual o motivo do contato?</option>
+                    <option value="1">Dúvida</option>
+                    <option value="2">Elogio</option>
+                    <option value="3">Reclamação</option>
+                </select>
+                <br>
+                <textarea class="borda-preta" name="mensagem">Preencha aqui a sua mensagem</textarea>
+                <br>
+                <button type="submit" class="borda-preta">ENVIAR</button>
+            </form>
+        </div>
+    </div>  
+</div>
+<div class="rodape">
+    <div class="redes-sociais">
+        <h2>Redes sociais</h2>
+        <img src="assets/img/facebook.png">
+        <img src="assets/img/linkedin.png">
+        <img src="assets/img/youtube.png">
+    </div>
+    <div class="area-contato">
+        <h2>Contato</h2>
+        <span>(11) 3333-4444</span>
+        <br>
+        <span>supergestao@dominio.com.br</span>
+    </div>
+    <div class="localizacao">
+        <h2>Localização</h2>
+        <img src="assets/img/mapa.png">
+    </div>
+</div>
+@endsection
