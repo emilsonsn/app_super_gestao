@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class siteContato extends Model
 {
     use HasFactory;
+    
 }
