@@ -16,8 +16,8 @@ use Illuminate\Support\Facades\Route;
 // Segundo parâmetro da funcção get é uma lista onde o primeiro índice é o controlador e o segundo a action que deverá ser acionada
 Route::get('/', [App\Http\Controllers\MainController::class, 'main'])->name('site.index');
 Route::get('/sobre_nos', [App\Http\Controllers\MainController::class, 'sobreNos'])->name('site.sobrenos');
-Route::get('/contato', [App\Http\Controllers\MainController::class, 'contato'])->name('site.contato');
-Route::post('/contato', [App\Http\Controllers\MainController::class, 'contato'])->name('site.contato');
+Route::get('/contato', [App\Http\Controllers\ContatoController::class, 'contatoGet'])->name('site.contato');
+Route::post('/contato', [App\Http\Controllers\ContatoController::class, 'contatoPost'])->name('site.contato');
 Route::get('/login', [App\Http\Controllers\MainController::class, 'login'])->name('site.login');
 Route::get('/teste/{p1}/{p2}', [App\Http\Controllers\TesteController::class, 'test'])->name('teste');
 
